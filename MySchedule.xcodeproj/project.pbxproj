@@ -54,38 +54,14 @@
 		F60248122763963C00F54B46 /* MySchedule */ = {
 			isa = PBXGroup;
 			children = (
-				F602484F2763A68F00F54B46 /* Resources */,
-				F602484E2763A5E900F54B46 /* Controllers */,
-				F602484D2763A5DE00F54B46 /* Application */,
-			);
-			path = MySchedule;
-			sourceTree = "<group>";
-		};
-		F602484D2763A5DE00F54B46 /* Application */ = {
-			isa = PBXGroup;
-			children = (
 				F60248132763963C00F54B46 /* AppDelegate.swift */,
 				F60248152763963C00F54B46 /* SceneDelegate.swift */,
-			);
-			path = Application;
-			sourceTree = "<group>";
-		};
-		F602484E2763A5E900F54B46 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
 				F60248172763963C00F54B46 /* ViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		F602484F2763A68F00F54B46 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
 				F602481C2763963F00F54B46 /* Assets.xcassets */,
 				F602481E2763963F00F54B46 /* LaunchScreen.storyboard */,
 				F60248212763963F00F54B46 /* Info.plist */,
 			);
-			path = Resources;
+			path = MySchedule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,7 +276,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H8V3Y2JKY7;
-				INFOPLIST_FILE = MySchedule/Resources/Info.plist;
+				INFOPLIST_FILE = MySchedule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -320,7 +296,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H8V3Y2JKY7;
-				INFOPLIST_FILE = MySchedule/Resources/Info.plist;
+				INFOPLIST_FILE = MySchedule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
