@@ -25,6 +25,7 @@
 		F602481C2763963F00F54B46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F602481F2763963F00F54B46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F60248212763963F00F54B46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F62B02252763C5AE00CDF414 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F6887F7C2763AFFA00CA34A8 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		F6887F7F2763B00500CA34A8 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		F6887F822763B01000CA34A8 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 		F60248072763963C00F54B46 = {
 			isa = PBXGroup;
 			children = (
+				F62B02252763C5AE00CDF414 /* README.md */,
 				F60248122763963C00F54B46 /* MySchedule */,
 				F60248112763963C00F54B46 /* Products */,
 			);
