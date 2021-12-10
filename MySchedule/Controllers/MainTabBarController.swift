@@ -14,7 +14,14 @@ class MainTabBarController: UITabBarController {
         
         setupTabBar()
     }
-
+    
+    func setupTabBar() {
+        let scheduleViewController = createNavController(viewController: ScheduleViewController(), itemName: "Schedule", itemImage: "calendar.badge.clock")
+        let tasksViewController = createNavController(viewController: TasksViewController(), itemName: "Tasks", itemImage: "text.badge.checkmark")
+        let contactsViewController = createNavController(viewController: ContactsViewController(), itemName: "Contacts", itemImage: "rectangle.stack.person.crop")
+        
+        viewControllers = [scheduleViewController, tasksViewController, contactsViewController]
+    }
     
     func createNavController(viewController: UIViewController, itemName: String, itemImage: String) -> UINavigationController {
         // systemName появился только с iOS 14, вроде как можно будет просто named указать
