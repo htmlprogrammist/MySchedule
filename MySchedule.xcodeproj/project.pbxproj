@@ -9,19 +9,25 @@
 /* Begin PBXBuildFile section */
 		F60248142763963C00F54B46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60248132763963C00F54B46 /* AppDelegate.swift */; };
 		F60248162763963C00F54B46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60248152763963C00F54B46 /* SceneDelegate.swift */; };
-		F60248182763963C00F54B46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60248172763963C00F54B46 /* ViewController.swift */; };
+		F60248182763963C00F54B46 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60248172763963C00F54B46 /* MainTabBarController.swift */; };
 		F602481D2763963F00F54B46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F602481C2763963F00F54B46 /* Assets.xcassets */; };
 		F60248202763963F00F54B46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F602481E2763963F00F54B46 /* LaunchScreen.storyboard */; };
+		F6887F7D2763AFFA00CA34A8 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6887F7C2763AFFA00CA34A8 /* ScheduleViewController.swift */; };
+		F6887F802763B00500CA34A8 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6887F7F2763B00500CA34A8 /* TasksViewController.swift */; };
+		F6887F832763B01000CA34A8 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6887F822763B01000CA34A8 /* ContactsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F60248102763963C00F54B46 /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F60248132763963C00F54B46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F60248152763963C00F54B46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F60248172763963C00F54B46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F60248172763963C00F54B46 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F602481C2763963F00F54B46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F602481F2763963F00F54B46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F60248212763963F00F54B46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6887F7C2763AFFA00CA34A8 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		F6887F7F2763B00500CA34A8 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		F6887F822763B01000CA34A8 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +79,10 @@
 		F60248562763AB4B00F54B46 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F60248172763963C00F54B46 /* ViewController.swift */,
+				F60248172763963C00F54B46 /* MainTabBarController.swift */,
+				F6887F7C2763AFFA00CA34A8 /* ScheduleViewController.swift */,
+				F6887F7F2763B00500CA34A8 /* TasksViewController.swift */,
+				F6887F822763B01000CA34A8 /* ContactsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -157,9 +166,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F60248182763963C00F54B46 /* ViewController.swift in Sources */,
+				F60248182763963C00F54B46 /* MainTabBarController.swift in Sources */,
 				F60248142763963C00F54B46 /* AppDelegate.swift in Sources */,
+				F6887F802763B00500CA34A8 /* TasksViewController.swift in Sources */,
 				F60248162763963C00F54B46 /* SceneDelegate.swift in Sources */,
+				F6887F7D2763AFFA00CA34A8 /* ScheduleViewController.swift in Sources */,
+				F6887F832763B01000CA34A8 /* ContactsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H8V3Y2JKY7;
 				INFOPLIST_FILE = MySchedule/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -321,7 +333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H8V3Y2JKY7;
 				INFOPLIST_FILE = MySchedule/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
