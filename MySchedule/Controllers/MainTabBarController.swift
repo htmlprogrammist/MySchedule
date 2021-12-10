@@ -31,6 +31,8 @@ class MainTabBarController: UITabBarController {
         // т.к. мы сместили картинку, надо будет сместить сам item по вертикали ниже
         // создаём NavController
         let navController = UINavigationController(rootViewController: viewController)
+        navController.tabBarItem = item
+        // создаём навКонтроллер и добавляем табБарАйтем
         return navController
     }
 }
