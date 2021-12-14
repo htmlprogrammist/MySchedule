@@ -71,9 +71,9 @@ extension ScheduleViewController {
         
         NSLayoutConstraint.activate([
             showHideButton.topAnchor.constraint(equalTo: calendar.bottomAnchor, constant: 0),
-            showHideButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            showHideButton.widthAnchor.constraint(equalToConstant: 50),
-            showHideButton.heightAnchor.constraint(equalToConstant: 150)
+            showHideButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            showHideButton.widthAnchor.constraint(equalToConstant: 100),
+            showHideButton.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
 }
