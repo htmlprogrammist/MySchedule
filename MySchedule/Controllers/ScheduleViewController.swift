@@ -26,6 +26,14 @@ class ScheduleViewController: UIViewController {
         button.titleLabel?.font = UIFont(name: "Avenir Next Demi Bold", size: 14)
         return button
     }()
+    
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
+    let idScheduleCell = "idScheduleCell" // идентификатор ячейки, потребуется при регистрации и создании ячейки
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +44,11 @@ class ScheduleViewController: UIViewController {
         // после того, как подписались под протоколы, создаём делегатов
         calendar.delegate = self
         calendar.dataSource = self
+        
+        // ... назначаем делегатов для наших протоколов и регистрируем ячейку
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(ScheduleTableViewCell.self, forCellReuseIdentifier: idScheduleCell)
         
         setConstraints()
         swipeAction()
@@ -77,6 +90,19 @@ class ScheduleViewController: UIViewController {
         default:
             break
         }
+    }
+}
+
+// MARK:
+extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: idScheduleCell, for: indexPath) as! ScheduleTableViewCell
+        return cell
+        // создали ячейку, теперь её нужно зарегистрировать. Для этого в методе viewDidLoad()...
     }
 }
 
