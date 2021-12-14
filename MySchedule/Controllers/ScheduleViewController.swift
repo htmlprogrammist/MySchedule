@@ -37,10 +37,10 @@ class ScheduleViewController: UIViewController {
         calendar.delegate = self
         calendar.dataSource = self
         
-        calendar.scope = .week
-        
         setConstraints()
+        swipeAction()
         
+        calendar.scope = .week
         showHideButton.addTarget(self, action: #selector(showHideButtonTapped), for: .touchUpInside)
     }
     
@@ -53,6 +53,31 @@ class ScheduleViewController: UIViewController {
             showHideButton.setTitle("Open calendar", for: .normal)
         }
     }
+    
+    // MARK: SwipeGestureRecognizer
+    func swipeAction() {
+        // не совсем корректно работает следующий код
+        // при свайпе вниз или вверх, всё равно отрабатывает корректно (вызывается handleSwipe, потом showHideButtonTapped)
+        // для нас это не критично, поэтому пофиг
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+        swipeUp.direction = .up
+        calendar.addGestureRecognizer(swipeUp)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+        swipeDown.direction = .down
+        calendar.addGestureRecognizer(swipeDown)
+    }
+    
+    @objc func handleSwipe(gesture: UISwipeGestureRecognizer) {
+        switch gesture.direction {
+        case .up:
+            showHideButtonTapped()
+        case .down:
+            showHideButtonTapped()
+        default:
+            break
+        }
+    }
 }
 
 // поставим метку, где мы подписываемся под протоколы
@@ -63,6 +88,10 @@ extension ScheduleViewController: FSCalendarDataSource, FSCalendarDelegate {
         // меняем высоту календаря, когда будет меняться именно высота календаря (что бы это ни значило)
         calendarHeightConstraint.constant = bounds.height
         view.layoutIfNeeded()
+    }
+    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        print(date)
     }
 }
 
