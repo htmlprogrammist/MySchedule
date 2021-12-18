@@ -16,6 +16,5 @@ extension UILabel {
         self.textColor = .black
         self.adjustsFontSizeToFitWidth = true  // если текст не умещается в границы лейбла, текст будет уменьшаться (подгоняться под ширину лейбла)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.backgroundColor = .red  // добавили, чтобы видеть границы лейбла
     }
 }

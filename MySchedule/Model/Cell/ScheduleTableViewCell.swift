@@ -22,9 +22,7 @@ class ScheduleTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [self] in
-            setConstraints()
-        }
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {
