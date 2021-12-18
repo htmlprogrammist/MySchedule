@@ -9,15 +9,15 @@ import UIKit
 
 class ScheduleTableViewCell: UITableViewCell {
     
-    let lessonName = UILabel(text: "Программирование", font: UIFont(name: "Avenir Next Demi Bold", size: 20), alignment: .left)
-    let teacherName = UILabel(text: "Антонов Антон Антонович", font: UIFont(name: "Avenir Next", size: 20), alignment: .right)
-    let lessonTime = UILabel(text: "08:00", font: UIFont(name: "Avenir Next Demi Bold", size: 20), alignment: .left)
-    let typeLabel = UILabel(text: "Тип:", font: UIFont(name: "Avenir Next", size: 14), alignment: .right)
-    let lessonType = UILabel(text: "Лекция", font: UIFont(name: "Avenir Next Demi Bold", size: 14), alignment: .left)
-    let buildingLabel = UILabel(text: "Корпус:", font: UIFont(name: "Avenir Next", size: 14), alignment: .right)
-    let lessonBuilding = UILabel(text: "1", font: UIFont(name: "Avenir Next Demi Bold", size: 14), alignment: .left)
-    let audLabel = UILabel(text: "Аудитория:", font: UIFont(name: "Avenir Next", size: 14), alignment: .right)
-    let lessonAud = UILabel(text: "101", font: UIFont(name: "Avenir Next Bold", size: 14), alignment: .left)
+    let lessonName = UILabel(text: "Программирование", font: .avenirNextDemiBold20())
+    let teacherName = UILabel(text: "Антонов Антон Антонович", font: .avenirNextDemiBold20(), alignment: .right)
+    let lessonTime = UILabel(text: "08:00", font: .avenirNextDemiBold20())
+    let typeLabel = UILabel(text: "Тип:", font: .avenirNext14(), alignment: .right)
+    let lessonType = UILabel(text: "Лекция", font: .avenirNextDemiBold14())
+    let buildingLabel = UILabel(text: "Корпус:", font: .avenirNext14(), alignment: .right)
+    let lessonBuilding = UILabel(text: "1", font: .avenirNextDemiBold14())
+    let audLabel = UILabel(text: "Аудитория:", font: .avenirNext14(), alignment: .right)
+    let lessonAud = UILabel(text: "101", font: .avenirNextDemiBold14())
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
