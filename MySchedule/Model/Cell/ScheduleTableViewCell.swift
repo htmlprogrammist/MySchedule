@@ -9,113 +9,15 @@ import UIKit
 
 class ScheduleTableViewCell: UITableViewCell {
     
-    let lessonName: UILabel = {
-        let label = UILabel()
-        label.text = "Программирование"
-        label.textColor = .black
-        label.font = UIFont(name: "Avenir Next Demi Bold", size: 20)
-        label.textAlignment = .left
-        label.adjustsFontSizeToFitWidth = true  // если текст не умещается в границы лейбла, текст будет уменьшаться (подгоняться под ширину лейбла)
-        label.backgroundColor = .red  // добавили, чтобы видеть границы лейбла
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let teacherName: UILabel = {
-        let label = UILabel()
-        label.text = "Антонов Антон Антонович"
-        label.textColor = .black
-        label.font = UIFont(name: "Avenir Next Demi", size: 20)
-        label.textAlignment = .right
-        label.adjustsFontSizeToFitWidth = true  // если текст не умещается в границы лейбла, текст будет уменьшаться (подгоняться под ширину лейбла)
-        label.backgroundColor = .red  // добавили, чтобы видеть границы лейбла
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let lessonTime: UILabel = {
-        let label = UILabel()
-        label.text = "08:00"
-        label.textColor = .black
-        label.font = UIFont(name: "Avenir Next Demi", size: 20)
-        label.textAlignment = .left
-        label.adjustsFontSizeToFitWidth = true  // если текст не умещается в границы лейбла, текст будет уменьшаться (подгоняться под ширину лейбла)
-        label.backgroundColor = .red  // добавили, чтобы видеть границы лейбла
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let typeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Тип:"
-        label.textColor = .black
-        label.font = UIFont(name: "Avenir Next Demi", size: 14)
-        label.textAlignment = .right
-        label.adjustsFontSizeToFitWidth = true  // если текст не умещается в границы лейбла, текст будет уменьшаться (подгоняться под ширину лейбла)
-        label.backgroundColor = .red  // добавили, чтобы видеть границы лейбла
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let lessonType: UILabel = {
-        let label = UILabel()
-        label.text = "Лекция"
-        label.textColor = .black
-        label.font = UIFont(name: "Avenir Next Demi Bold", size: 14)
-        label.textAlignment = .left
-        label.adjustsFontSizeToFitWidth = true  // если текст не умещается в границы лейбла, текст будет уменьшаться (подгоняться под ширину лейбла)
-        label.backgroundColor = .red  // добавили, чтобы видеть границы лейбла
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let buildingLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Корпус:"
-        label.textColor = .black
-        label.font = UIFont(name: "Avenir Next", size: 14)
-        label.textAlignment = .right
-        label.adjustsFontSizeToFitWidth = true  // если текст не умещается в границы лейбла, текст будет уменьшаться (подгоняться под ширину лейбла)
-        label.backgroundColor = .red  // добавили, чтобы видеть границы лейбла
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let lessonBuilding: UILabel = {
-        let label = UILabel()
-        label.text = "1"
-        label.textColor = .black
-        label.font = UIFont(name: "Avenir Next Demi Bold", size: 14)
-        label.textAlignment = .left
-        label.adjustsFontSizeToFitWidth = true  // если текст не умещается в границы лейбла, текст будет уменьшаться (подгоняться под ширину лейбла)
-        label.backgroundColor = .red  // добавили, чтобы видеть границы лейбла
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let audLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Аудитория:"
-        label.textColor = .black
-        label.font = UIFont(name: "Avenir Next", size: 14)
-        label.textAlignment = .right
-        label.adjustsFontSizeToFitWidth = true  // если текст не умещается в границы лейбла, текст будет уменьшаться (подгоняться под ширину лейбла)
-        label.backgroundColor = .red  // добавили, чтобы видеть границы лейбла
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let lessonAud: UILabel = {
-        let label = UILabel()
-        label.text = "101"
-        label.textColor = .black
-        label.font = UIFont(name: "Avenir Next Demi Bold", size: 14)
-        label.textAlignment = .left
-        label.adjustsFontSizeToFitWidth = true  // если текст не умещается в границы лейбла, текст будет уменьшаться (подгоняться под ширину лейбла)
-        label.backgroundColor = .red  // добавили, чтобы видеть границы лейбла
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    let lessonName = UILabel(text: "Программирование", font: UIFont(name: "Avenir Next Demi Bold", size: 20), alignment: .left)
+    let teacherName = UILabel(text: "Антонов Антон Антонович", font: UIFont(name: "Avenir Next", size: 20), alignment: .right)
+    let lessonTime = UILabel(text: "08:00", font: UIFont(name: "Avenir Next Demi Bold", size: 20), alignment: .left)
+    let typeLabel = UILabel(text: "Тип:", font: UIFont(name: "Avenir Next", size: 14), alignment: .right)
+    let lessonType = UILabel(text: "Лекция", font: UIFont(name: "Avenir Next Demi Bold", size: 14), alignment: .left)
+    let buildingLabel = UILabel(text: "Корпус:", font: UIFont(name: "Avenir Next", size: 14), alignment: .right)
+    let lessonBuilding = UILabel(text: "1", font: UIFont(name: "Avenir Next Demi Bold", size: 14), alignment: .left)
+    let audLabel = UILabel(text: "Аудитория:", font: UIFont(name: "Avenir Next", size: 14), alignment: .right)
+    let lessonAud = UILabel(text: "101", font: UIFont(name: "Avenir Next Bold", size: 14), alignment: .left)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
