@@ -53,6 +53,7 @@ class OptionsScheduleTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionsScheduleHeader) as! HeaderOptionScheduleTableViewCell
 //        header.textLabel.text = "HEADER" // выглядит убого, поэтому мы сами сделали Label
+        header.headerConfigure(section: section)
         return header
     }
     
