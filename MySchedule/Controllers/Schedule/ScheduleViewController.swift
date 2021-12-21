@@ -8,7 +8,7 @@
 import UIKit
 import FSCalendar
 
-class TasksViewController: UIViewController {
+class ScheduleViewController: UIViewController {
     
     var calendarHeightConstraint: NSLayoutConstraint!
     
@@ -26,22 +26,38 @@ class TasksViewController: UIViewController {
         button.titleLabel?.font = UIFont(name: "Avenir Next Demi Bold", size: 14)
         return button
     }()
+    
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.bounces = false  // чтобы нельзя было двигать таблицу ни вверх, ни вниз. Но она прокручивается.
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
+    let idScheduleCell = "idScheduleCell" // идентификатор ячейки, потребуется при регистрации и создании ячейки
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        title = "Tasks"
+        title = "Schedule"
         
         // после того, как подписались под протоколы, создаём делегатов
         calendar.delegate = self
         calendar.dataSource = self
+        
+        // ... назначаем делегатов для наших протоколов и регистрируем ячейку
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(ScheduleTableViewCell.self, forCellReuseIdentifier: idScheduleCell)
         
         setConstraints()
         swipeAction()
         
         calendar.scope = .week
         showHideButton.addTarget(self, action: #selector(showHideButtonTapped), for: .touchUpInside)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
     }
     
     @objc func showHideButtonTapped() {
@@ -52,6 +68,10 @@ class TasksViewController: UIViewController {
             calendar.setScope(.week, animated: true)
             showHideButton.setTitle("Open calendar", for: .normal)
         }
+    }
+    
+    @objc func addButtonTapped() {
+        
     }
     
     // MARK: SwipeGestureRecognizer
@@ -80,9 +100,26 @@ class TasksViewController: UIViewController {
     }
 }
 
+// MARK: UITableViewDelegate, UITableViewDataSource 
+extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: idScheduleCell, for: indexPath) as! ScheduleTableViewCell
+        return cell
+        // создали ячейку, теперь её нужно зарегистрировать. Для этого в методе viewDidLoad()...
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+}
+
 // поставим метку, где мы подписываемся под протоколы
 // MARK: FSCalendarDataSource, FSCalendarDelegate
-extension TasksViewController: FSCalendarDataSource, FSCalendarDelegate {
+extension ScheduleViewController: FSCalendarDataSource, FSCalendarDelegate {
     
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
         // меняем высоту календаря, когда будет меняться именно высота календаря (что бы это ни значило)
@@ -95,7 +132,7 @@ extension TasksViewController: FSCalendarDataSource, FSCalendarDelegate {
     }
 }
 
-extension TasksViewController {
+extension ScheduleViewController {
     // MARK: Set constraints
     // устанавливаем констрейнты
     func setConstraints() {
@@ -117,6 +154,15 @@ extension TasksViewController {
             showHideButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             showHideButton.widthAnchor.constraint(equalToConstant: 100),
             showHideButton.heightAnchor.constraint(equalToConstant: 20)
+        ])
+        
+        view.addSubview(tableView)
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: showHideButton.bottomAnchor, constant: 10),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
     }
 }

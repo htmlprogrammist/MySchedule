@@ -8,7 +8,7 @@
 import UIKit
 import FSCalendar
 
-class ScheduleViewController: UIViewController {
+class TasksViewController: UIViewController {
     
     var calendarHeightConstraint: NSLayoutConstraint!
     
@@ -29,26 +29,26 @@ class ScheduleViewController: UIViewController {
     
     let tableView: UITableView = {
         let tableView = UITableView()
+        tableView.bounces = false  // чтобы нельзя было двигать таблицу ни вверх, ни вниз. Но она прокручивается.
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
-    let idScheduleCell = "idScheduleCell" // идентификатор ячейки, потребуется при регистрации и создании ячейки
+    let idTasksCell = "idTasksCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        title = "Schedule"
+        title = "Tasks"
         
         // после того, как подписались под протоколы, создаём делегатов
         calendar.delegate = self
         calendar.dataSource = self
         
-        // ... назначаем делегатов для наших протоколов и регистрируем ячейку
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(ScheduleTableViewCell.self, forCellReuseIdentifier: idScheduleCell)
+        tableView.register(TasksTableViewCell.self, forCellReuseIdentifier: idTasksCell)
         
         setConstraints()
         swipeAction()
@@ -93,14 +93,16 @@ class ScheduleViewController: UIViewController {
     }
 }
 
-// MARK: UITableViewDelegate, UITableViewDataSource 
-extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: UITableViewDelegate, UITableViewDataSource
+extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idScheduleCell, for: indexPath) as! ScheduleTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: idTasksCell, for: indexPath) as! TasksTableViewCell
+        cell.cellTaskDelegate = self
+        cell.index = indexPath
         return cell
         // создали ячейку, теперь её нужно зарегистрировать. Для этого в методе viewDidLoad()...
     }
@@ -110,9 +112,18 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: PressReadyTaskButtonProtocol
+extension TasksViewController: PressReadyTaskButtonProtocol {
+    func readyButtonTapped(indexPath: IndexPath) {
+        print("Tap")
+    }
+    
+    
+}
+
 // поставим метку, где мы подписываемся под протоколы
 // MARK: FSCalendarDataSource, FSCalendarDelegate
-extension ScheduleViewController: FSCalendarDataSource, FSCalendarDelegate {
+extension TasksViewController: FSCalendarDataSource, FSCalendarDelegate {
     
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
         // меняем высоту календаря, когда будет меняться именно высота календаря (что бы это ни значило)
@@ -125,7 +136,7 @@ extension ScheduleViewController: FSCalendarDataSource, FSCalendarDelegate {
     }
 }
 
-extension ScheduleViewController {
+extension TasksViewController {
     // MARK: Set constraints
     // устанавливаем констрейнты
     func setConstraints() {
