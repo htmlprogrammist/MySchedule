@@ -28,6 +28,8 @@ extension UIViewController {
         alert.addAction(ok)
         alert.addAction(cancel)
         
+        alert.negativeWidthConstraint() // удаляем мусорную ошибку Apple (она ненастоящая)
+        
         present(alert, animated: true, completion: nil)
     }
 }

@@ -38,6 +38,8 @@ extension UIViewController {
         alert.addAction(ok)
         alert.addAction(cancel)
         
+        alert.negativeWidthConstraint() // удаляем мусорную ошибку Apple (она ненастоящая)
+        
         alert.view.heightAnchor.constraint(equalToConstant: 300).isActive = true
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         datePicker.widthAnchor.constraint(equalTo: alert.view.widthAnchor).isActive = true

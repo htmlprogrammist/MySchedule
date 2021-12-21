@@ -30,6 +30,7 @@
 		F6E167612771FE0800239C08 /* AlertForCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E167602771FE0800239C08 /* AlertForCellName.swift */; };
 		F6E167642772046600239C08 /* ScheduleColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E167632772046600239C08 /* ScheduleColorViewController.swift */; };
 		F6E167672772048500239C08 /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E167662772048500239C08 /* TeachersViewController.swift */; };
+		F6E1676A2772095100239C08 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E167692772095100239C08 /* UIAlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		F6E167602771FE0800239C08 /* AlertForCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertForCellName.swift; sourceTree = "<group>"; };
 		F6E167632772046600239C08 /* ScheduleColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleColorViewController.swift; sourceTree = "<group>"; };
 		F6E167662772048500239C08 /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
+		F6E167692772095100239C08 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				F63CC45D276DD1B600B0FC5B /* UIStackView.swift */,
 				F63CC460276DD70C00B0FC5B /* UILabel.swift */,
 				F63CC463276DE42800B0FC5B /* UIFont.swift */,
+				F6E167692772095100239C08 /* UIAlertController.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				F63CC461276DD70D00B0FC5B /* UILabel.swift in Sources */,
 				F6887F802763B00500CA34A8 /* TasksViewController.swift in Sources */,
 				F60248162763963C00F54B46 /* SceneDelegate.swift in Sources */,
+				F6E1676A2772095100239C08 /* UIAlertController.swift in Sources */,
 				F6E1675E2771FC8C00239C08 /* AlertTime.swift in Sources */,
 				F6887F7D2763AFFA00CA34A8 /* ScheduleViewController.swift in Sources */,
 				F63CC464276DE42800B0FC5B /* UIFont.swift in Sources */,
