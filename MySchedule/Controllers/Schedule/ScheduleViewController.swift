@@ -71,7 +71,8 @@ class ScheduleViewController: UIViewController {
     }
     
     @objc func addButtonTapped() {
-        
+        let scheduleOption = OptionsScheduleTableViewController()
+        navigationController?.pushViewController(scheduleOption, animated: true)
     }
     
     // MARK: SwipeGestureRecognizer
