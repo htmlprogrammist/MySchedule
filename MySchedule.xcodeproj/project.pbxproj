@@ -27,6 +27,7 @@
 		F6E167552771AFB800239C08 /* HeaderOptionScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E167542771AFB800239C08 /* HeaderOptionScheduleTableViewCell.swift */; };
 		F6E1675A2771E33E00239C08 /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E167592771E33E00239C08 /* AlertDate.swift */; };
 		F6E1675E2771FC8C00239C08 /* AlertTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E1675D2771FC8C00239C08 /* AlertTime.swift */; };
+		F6E167612771FE0800239C08 /* AlertForCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E167602771FE0800239C08 /* AlertForCellName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		F6E167542771AFB800239C08 /* HeaderOptionScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		F6E167592771E33E00239C08 /* AlertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDate.swift; sourceTree = "<group>"; };
 		F6E1675D2771FC8C00239C08 /* AlertTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTime.swift; sourceTree = "<group>"; };
+		F6E167602771FE0800239C08 /* AlertForCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertForCellName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 			children = (
 				F6E167592771E33E00239C08 /* AlertDate.swift */,
 				F6E1675D2771FC8C00239C08 /* AlertTime.swift */,
+				F6E167602771FE0800239C08 /* AlertForCellName.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				F64AFB7F27691EAA00549E13 /* ScheduleTableViewCell.swift in Sources */,
 				F60248142763963C00F54B46 /* AppDelegate.swift in Sources */,
 				F63CC45E276DD1B600B0FC5B /* UIStackView.swift in Sources */,
+				F6E167612771FE0800239C08 /* AlertForCellName.swift in Sources */,
 				F63CC461276DD70D00B0FC5B /* UILabel.swift in Sources */,
 				F6887F802763B00500CA34A8 /* TasksViewController.swift in Sources */,
 				F60248162763963C00F54B46 /* SceneDelegate.swift in Sources */,

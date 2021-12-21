@@ -69,6 +69,9 @@ class OptionsScheduleTableViewController: UITableViewController {
         case [0, 0]: alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
             print(numberWeekday, date)
         }
+        case [0, 1]: alertTime(label: cell.nameCellLabel) { (date) in
+            print(date)
+        }
         default: print("Error at didSelectRowAt")
         }
     }

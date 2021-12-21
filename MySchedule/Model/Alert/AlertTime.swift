@@ -11,26 +11,21 @@ extension UIViewController {
     func alertTime(label: UILabel, completionHandler: @escaping(NSDate) -> Void) {
         let alert = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
         let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .date
+        datePicker.datePickerMode = .time
         datePicker.preferredDatePickerStyle = .wheels
+        datePicker.locale = NSLocale(localeIdentifier: "ru_RU") as Locale
         
         alert.view.addSubview(datePicker)
         
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
+            // наша цель - получить время в формате часы и минуты
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd.MM.yyyy"
+            dateFormatter.dateFormat = "HH:mm"
+            let timeString = dateFormatter.string(from: datePicker.date)
+            let timeSchedule = datePicker.date as NSDate
+            completionHandler(timeSchedule)
             
-            let dateString = dateFormatter.string(from: datePicker.date)
-            
-            // определяем день недели
-            let calendar = Calendar.current
-            let component = calendar.dateComponents([.weekday], from: datePicker.date)
-            guard let weekday = component.weekday else { return } // чтобы не было опционала Int?
-            let numberWeekday = weekday
-            let date = datePicker.date as NSDate // приводим тип Date к NSDate
-            completionHandler(numberWeekday, date)
-            
-            label.text = dateString
+            label.text = timeString
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
