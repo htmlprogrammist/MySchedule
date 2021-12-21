@@ -29,7 +29,7 @@ class OptionsScheduleTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setConstraints()
-        self.backgroundColor = .white
+        self.backgroundColor = .clear
         self.selectionStyle = .none // убрали выделение с ячеек
     }
     
@@ -48,7 +48,7 @@ class OptionsScheduleTableViewCell: UITableViewCell {
         
         contentView.addSubview(nameCellLabel)
         NSLayoutConstraint.activate([
-            nameCellLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0),
+            nameCellLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             nameCellLabel.leadingAnchor.constraint(equalTo: backgroundViewCell.leadingAnchor, constant: 10),
         ])
     }
