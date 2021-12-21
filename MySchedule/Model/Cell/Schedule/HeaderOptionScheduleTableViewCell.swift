@@ -9,7 +9,7 @@ import UIKit
 
 class HeaderOptionScheduleTableViewCell: UITableViewHeaderFooterView {
     // text нам не совсем нужен
-    let headerLabel = UILabel(text: "HEADER", font: .avenirNext14())
+    let headerLabel = UILabel(text: "", font: .avenirNext14())
     
     let headerNameArray = ["DATE AND TIME", "LESSON", "TEACHER", "COLOR", "PERIOD"]
     
