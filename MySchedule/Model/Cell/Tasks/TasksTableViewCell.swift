@@ -53,7 +53,7 @@ class TasksTableViewCell: UITableViewCell {
             readyButton.heightAnchor.constraint(equalToConstant: 40),
             readyButton.widthAnchor.constraint(equalToConstant: 40),
             
-            taskName.centerYAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            taskName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             taskName.trailingAnchor.constraint(equalTo: readyButton.leadingAnchor, constant: -5),
             taskName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             taskName.heightAnchor.constraint(equalToConstant: 25),

@@ -24,7 +24,7 @@
 		F6887F802763B00500CA34A8 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6887F7F2763B00500CA34A8 /* TasksViewController.swift */; };
 		F6887F832763B01000CA34A8 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6887F822763B01000CA34A8 /* ContactsViewController.swift */; };
 		F6E167422771A24300239C08 /* OptionsScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E167412771A24300239C08 /* OptionsScheduleTableViewController.swift */; };
-		F6E167502771A5EE00239C08 /* OptionsScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E1674F2771A5EE00239C08 /* OptionsScheduleTableViewCell.swift */; };
+		F6E167502771A5EE00239C08 /* OptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E1674F2771A5EE00239C08 /* OptionsTableViewCell.swift */; };
 		F6E167552771AFB800239C08 /* HeaderOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E167542771AFB800239C08 /* HeaderOptionsTableViewCell.swift */; };
 		F6E1675A2771E33E00239C08 /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E167592771E33E00239C08 /* AlertDate.swift */; };
 		F6E1675E2771FC8C00239C08 /* AlertTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E1675D2771FC8C00239C08 /* AlertTime.swift */; };
@@ -60,7 +60,7 @@
 		F6887F7F2763B00500CA34A8 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		F6887F822763B01000CA34A8 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		F6E167412771A24300239C08 /* OptionsScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScheduleTableViewController.swift; sourceTree = "<group>"; };
-		F6E1674F2771A5EE00239C08 /* OptionsScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		F6E1674F2771A5EE00239C08 /* OptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTableViewCell.swift; sourceTree = "<group>"; };
 		F6E167542771AFB800239C08 /* HeaderOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		F6E167592771E33E00239C08 /* AlertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDate.swift; sourceTree = "<group>"; };
 		F6E1675D2771FC8C00239C08 /* AlertTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTime.swift; sourceTree = "<group>"; };
@@ -197,6 +197,7 @@
 			children = (
 				F6E167542771AFB800239C08 /* HeaderOptionsTableViewCell.swift */,
 				F6FCCB19279719E5008CED62 /* ColorTableViewCell.swift */,
+				F6E1674F2771A5EE00239C08 /* OptionsTableViewCell.swift */,
 				F6E1674A2771A5C900239C08 /* Schedule */,
 				F6E1674C2771A5CE00239C08 /* Tasks */,
 				F6E1674E2771A5D400239C08 /* Contacts */,
@@ -245,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				F64AFB7E27691EAA00549E13 /* ScheduleTableViewCell.swift */,
-				F6E1674F2771A5EE00239C08 /* OptionsScheduleTableViewCell.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -408,7 +408,7 @@
 				F6887F832763B01000CA34A8 /* ContactsViewController.swift in Sources */,
 				F6E167552771AFB800239C08 /* HeaderOptionsTableViewCell.swift in Sources */,
 				F63CC467276DF92800B0FC5B /* TasksTableViewCell.swift in Sources */,
-				F6E167502771A5EE00239C08 /* OptionsScheduleTableViewCell.swift in Sources */,
+				F6E167502771A5EE00239C08 /* OptionsTableViewCell.swift in Sources */,
 				F686AB71276FC6630086051A /* PressButtonProtocols.swift in Sources */,
 				F6E167642772046600239C08 /* ScheduleColorViewController.swift in Sources */,
 				F6538D212799C5B3009C1B61 /* ColorTaskTableViewController.swift in Sources */,
