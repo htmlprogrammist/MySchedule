@@ -24,11 +24,7 @@ class OptionTaskTableViewCell: UITableViewCell {
         return label
     }()
     
-    let cellNameArray = [["Date", "Time"],
-                         ["Name", "Type", "Building", "Audience"],
-                         ["Teacher name"],
-                         [""],
-                         ["Repeat every 7 days"]]
+    let cellNameArray = ["Date", "Lesson", "Task", ""]
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -43,7 +39,7 @@ class OptionTaskTableViewCell: UITableViewCell {
     }
     
     func cellConfigure(indexPath: IndexPath) {
-        nameCellLabel.text = cellNameArray[indexPath.section][indexPath.row]
+        nameCellLabel.text = cellNameArray[indexPath.section]
         
         if indexPath == [3, 0] {
             backgroundViewCell.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)

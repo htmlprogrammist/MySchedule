@@ -1,31 +1,31 @@
 //
-//  ScheduleColorViewController.swift
+//  ColorTaskTableViewController.swift
 //  MySchedule
 //
-//  Created by Егор Бадмаев on 21.12.2021.
+//  Created by Егор Бадмаев on 20.01.2022.
 //
 
 import UIKit
 
-class ScheduleColorViewController: UITableViewController {
+class ColorTaskTableViewController: UITableViewController {
     
-    let idOptionsColorCell = "idOptionsColorCell"
-    let idOptionsColorHeader = "idOptionsColorHeader"
+    let idTasksColorCell = "idTasksColorCell"
+    let idTasksColorHeader = "idTasksColorHeader"
     
     let headerNameArray = ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "DEEP BLUE", "PURPLE"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Color Schedule"
+        title = "Color Tasks"
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
         tableView.separatorStyle = .none
         tableView.bounces = false
-        tableView.register(ColorTableViewCell.self, forCellReuseIdentifier: idOptionsColorCell)
-        tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsColorHeader)
+        tableView.register(ColorTableViewCell.self, forCellReuseIdentifier: idTasksColorCell)
+        tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idTasksColorHeader)
     }
     
     func pushControllers(vc: UIViewController) {
@@ -43,7 +43,7 @@ class ScheduleColorViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsColorCell, for: indexPath) as! ColorTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: idTasksColorCell, for: indexPath) as! ColorTableViewCell
         cell.cellConfigure(indexPath: indexPath)
         return cell
     }
@@ -54,7 +54,7 @@ class ScheduleColorViewController: UITableViewController {
     
     // создаём заголовки
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionsColorHeader) as! HeaderOptionsTableViewCell
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idTasksColorHeader) as! HeaderOptionsTableViewCell
 //        header.textLabel.text = "HEADER" // выглядит убого, поэтому мы сами сделали Label
         header.headerConfigure(nameArray: headerNameArray, section: section)
         return header

@@ -12,12 +12,12 @@ class TaskOptionTableView: UITableViewController {
     let idOptionsTaskCell = "idOptionsTaskCell"
     let idOptionsTasksHeader = "idOptionsTasksHeader"
     
-    let headerNameArray = ["DATE AND TIME", "LESSON", "TEACHER", "COLOR", "PERIOD"]
+    let headerNameArray = ["DATE", "LESSON", "TASK", "COLOR"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Option Schedule"
+        title = "Options Tasks"
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -73,21 +73,14 @@ class TaskOptionTableView: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! OptionsScheduleTableViewCell
-        switch indexPath {
-        case [0, 0]: alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
-            print(numberWeekday, date)
+        let cell = tableView.cellForRow(at: indexPath) as! OptionTaskTableViewCell
+        switch indexPath.section {
+        case 0: alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
+             print(numberWeekday, date)
         }
-        case [0, 1]: alertTime(label: cell.nameCellLabel) { (date) in
-            print(date)
-        }
-        case [1, 0]: alertForCellName(label: cell.nameCellLabel, name: "Name lesson", placeholder: "Enter name lesson")
-        case [1, 1]: alertForCellName(label: cell.nameCellLabel, name: "Type", placeholder: "Enter type lesson")
-        case [1, 2]: alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter number of building")
-        case [1, 3]: alertForCellName(label: cell.nameCellLabel, name: "Audience number", placeholder: "Enter number of audience")
-        
-        case [2, 0]: pushControllers(vc: TeachersViewController())
-        case [3, 0]: pushControllers(vc: ScheduleColorViewController())
+        case 1: alertForCellName(label: cell.nameCellLabel, name: "Name lesson", placeholder: "Enter name lesson")
+        case 2: alertForCellName(label: cell.nameCellLabel, name: "Name task", placeholder: "Enter name task")
+        case 3: pushControllers(vc: ColorTaskTableViewController())
         default: print("Error at didSelectRowAt")
         }
     }

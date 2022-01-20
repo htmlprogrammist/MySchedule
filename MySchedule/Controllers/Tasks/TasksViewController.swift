@@ -60,8 +60,8 @@ class TasksViewController: UIViewController {
     }
     
     @objc func addButtonTapped() {
-        let scheduleOption = OptionsScheduleTableViewController()
-        navigationController?.pushViewController(scheduleOption, animated: true)
+        let taskOption = TaskOptionTableView()
+        navigationController?.pushViewController(taskOption, animated: true)
     }
     
     @objc func showHideButtonTapped() {
