@@ -34,7 +34,6 @@
 		F6E1676A2772095100239C08 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E167692772095100239C08 /* UIAlertController.swift */; };
 		F6FCCB1A279719E5008CED62 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCCB19279719E5008CED62 /* ColorTableViewCell.swift */; };
 		F6FCCB1D27971E81008CED62 /* TaskOptionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCCB1C27971E81008CED62 /* TaskOptionTableView.swift */; };
-		F6FCCB21279722F3008CED62 /* OptionTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCCB20279722F3008CED62 /* OptionTaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,7 +69,6 @@
 		F6E167692772095100239C08 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		F6FCCB19279719E5008CED62 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
 		F6FCCB1C27971E81008CED62 /* TaskOptionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOptionTableView.swift; sourceTree = "<group>"; };
-		F6FCCB20279722F3008CED62 /* OptionTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				F63CC466276DF92800B0FC5B /* TasksTableViewCell.swift */,
-				F6FCCB20279722F3008CED62 /* OptionTaskTableViewCell.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -404,7 +401,6 @@
 				F6887F7D2763AFFA00CA34A8 /* ScheduleViewController.swift in Sources */,
 				F63CC464276DE42800B0FC5B /* UIFont.swift in Sources */,
 				F6FCCB1A279719E5008CED62 /* ColorTableViewCell.swift in Sources */,
-				F6FCCB21279722F3008CED62 /* OptionTaskTableViewCell.swift in Sources */,
 				F6887F832763B01000CA34A8 /* ContactsViewController.swift in Sources */,
 				F6E167552771AFB800239C08 /* HeaderOptionsTableViewCell.swift in Sources */,
 				F63CC467276DF92800B0FC5B /* TasksTableViewCell.swift in Sources */,

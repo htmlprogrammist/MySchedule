@@ -13,6 +13,7 @@ class TaskOptionTableView: UITableViewController {
     let idOptionsTasksHeader = "idOptionsTasksHeader"
     
     let headerNameArray = ["DATE", "LESSON", "TASK", "COLOR"]
+    let cellNameArray = ["Date", "Lesson", "Task", ""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,21 +25,14 @@ class TaskOptionTableView: UITableViewController {
         tableView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
         tableView.separatorStyle = .none
         tableView.bounces = false
-        tableView.register(OptionTaskTableViewCell.self, forCellReuseIdentifier: idOptionsTaskCell)
+        tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionsTaskCell)
         tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsTasksHeader)
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
     }
     
     func pushControllers(vc: UIViewController) {
         let viewController = vc
         navigationController?.navigationBar.topItem?.title = "Options" // переименовали BackButton
         navigationController?.pushViewController(viewController, animated: true)
-    }
-    
-    @objc func addButtonTapped() {
-        let scheduleOption = OptionsScheduleTableViewController()
-        navigationController?.pushViewController(scheduleOption, animated: true)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -50,8 +44,8 @@ class TaskOptionTableView: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsTaskCell, for: indexPath) as! OptionTaskTableViewCell
-        cell.cellConfigure(indexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsTaskCell, for: indexPath) as! OptionsTableViewCell
+        cell.cellTasksConfigure(nameArray: cellNameArray, indexPath: indexPath)
         return cell
     }
     
@@ -73,7 +67,7 @@ class TaskOptionTableView: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! OptionTaskTableViewCell
+        let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
         switch indexPath.section {
         case 0: alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
              print(numberWeekday, date)
