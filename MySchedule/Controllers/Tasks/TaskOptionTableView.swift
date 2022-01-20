@@ -1,16 +1,16 @@
 //
-//  OptionsScheduleViewController.swift
+//  TaskOptionTableView.swift
 //  MySchedule
 //
-//  Created by Егор Бадмаев on 21.12.2021.
+//  Created by Егор Бадмаев on 18.01.2022.
 //
 
 import UIKit
 
-class OptionsScheduleTableViewController: UITableViewController {
+class TaskOptionTableView: UITableViewController {
     
-    let idOptionsScheduleCell = "idOptionsScheduleCell"
-    let idOptionsHeader = "idOptionsHeader"
+    let idOptionsTaskCell = "idOptionsTaskCell"
+    let idOptionsTasksHeader = "idOptionsTasksHeader"
     
     let headerNameArray = ["DATE AND TIME", "LESSON", "TEACHER", "COLOR", "PERIOD"]
     
@@ -24,8 +24,10 @@ class OptionsScheduleTableViewController: UITableViewController {
         tableView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
         tableView.separatorStyle = .none
         tableView.bounces = false
-        tableView.register(OptionsScheduleTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
-        tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsHeader)
+        tableView.register(OptionTaskTableViewCell.self, forCellReuseIdentifier: idOptionsTaskCell)
+        tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsTasksHeader)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
     }
     
     func pushControllers(vc: UIViewController) {
@@ -34,23 +36,21 @@ class OptionsScheduleTableViewController: UITableViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
+    @objc func addButtonTapped() {
+        let scheduleOption = OptionsScheduleTableViewController()
+        navigationController?.pushViewController(scheduleOption, animated: true)
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        5
+        return 4
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0: return 2
-        case 1: return 4
-        case 2: return 1
-        case 3: return 1
-        default:
-            return 1
-        }
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsScheduleCell, for: indexPath) as! OptionsScheduleTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsTaskCell, for: indexPath) as! OptionTaskTableViewCell
         cell.cellConfigure(indexPath: indexPath)
         return cell
     }
@@ -61,7 +61,7 @@ class OptionsScheduleTableViewController: UITableViewController {
     
     // создаём заголовки
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionsHeader) as! HeaderOptionsTableViewCell
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionsTasksHeader) as! HeaderOptionsTableViewCell
 //        header.textLabel.text = "HEADER" // выглядит убого, поэтому мы сами сделали Label
         header.headerConfigure(nameArray: headerNameArray, section: section)
         return header
