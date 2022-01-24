@@ -79,21 +79,12 @@ class ContactOptionTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
-        switch indexPath {
-        case [0, 0]: alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
-            print(numberWeekday, date)
-        }
-        case [0, 1]: alertTime(label: cell.nameCellLabel) { (date) in
-            print(date)
-        }
-        case [1, 0]: alertForCellName(label: cell.nameCellLabel, name: "Name lesson", placeholder: "Enter name lesson")
-        case [1, 1]: alertForCellName(label: cell.nameCellLabel, name: "Type", placeholder: "Enter type lesson")
-        case [1, 2]: alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter number of building")
-        case [1, 3]: alertForCellName(label: cell.nameCellLabel, name: "Audience number", placeholder: "Enter number of audience")
-        
-        case [2, 0]: pushControllers(vc: TeachersViewController())
-        case [3, 0]: pushControllers(vc: ScheduleColorViewController())
-        default: print("Error at didSelectRowAt")
+        switch indexPath.section {
+        case 0: alertForCellName(label: cell.nameCellLabel, name: "Name Contact", placeholder: "Enter name contact")
+        case 1: alertForCellName(label: cell.nameCellLabel, name: "Phone Contact", placeholder: "Enter phone contact")
+        case 2: alertForCellName(label: cell.nameCellLabel, name: "Mail Contact", placeholder: "Enter mail contact")
+        default:
+            print("Tap ContactTableView")
         }
     }
 }

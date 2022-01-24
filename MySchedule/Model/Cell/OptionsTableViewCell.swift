@@ -10,11 +10,12 @@ import UIKit
 class OptionsTableViewCell: UITableViewCell {
     
     let backgroundViewCell: UIImageView = {
-        let view = UIImageView()
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 10
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        let imageView = UIImageView()
+        imageView.backgroundColor = .white
+        imageView.layer.cornerRadius = 10
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     let nameCellLabel: UILabel = {
@@ -32,15 +33,6 @@ class OptionsTableViewCell: UITableViewCell {
         repeatSwitch.translatesAutoresizingMaskIntoConstraints = false
         return repeatSwitch
     }()
-    
-//    let addImageContact: UIImageView = {
-//        let imageView = UIImageView()
-//        imageView.layer.cornerRadius = 10 // обрезаем края на 10 поинтов
-//        imageView.image = UIImage(systemName: "person.fill.badge.plus")
-//        imageView.isHidden = true
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
-//        return imageView
-//    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -78,6 +70,8 @@ class OptionsTableViewCell: UITableViewCell {
     
     func cellContactsConfigure(nameArray: [String], indexPath: IndexPath) {
         nameCellLabel.text = nameArray[indexPath.section]
+        
+        indexPath.section == 4 ? backgroundViewCell.image = UIImage(systemName: "person.fill.badge.plus"): nil
     }
     
     @objc func switchChange(paramTarget: UISwitch) {
@@ -107,13 +101,5 @@ class OptionsTableViewCell: UITableViewCell {
             repeatSwitch.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             repeatSwitch.trailingAnchor.constraint(equalTo: backgroundViewCell.trailingAnchor, constant: -20)
         ])
-        
-//        contentView.addSubview(addImageContact)
-//        NSLayoutConstraint.activate([
-//            addImageContact.topAnchor.constraint(equalTo: contentView.topAnchor),
-//            addImageContact.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-//            addImageContact.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-//            addImageContact.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-//        ])
     }
 }
