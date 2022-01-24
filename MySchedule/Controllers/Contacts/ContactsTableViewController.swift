@@ -9,8 +9,7 @@ import UIKit
 
 class ContactsTableViewController: UITableViewController {
     
-    let idOptionsContactsCell = "idOptionsContactsCell"
-    let idOptionsContactsHeader = "idOptionsContactsHeader"
+    let idContactsCell = "idOptionsContactsCell"
     
     let headerNameArray = ["NAME", "PHONE", "MAIL", "TYPE", "CHOOSE IMAGE"]
     let cellNameArray = ["Name", "Phone", "Mail", "Type", ""]
@@ -23,10 +22,16 @@ class ContactsTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
         tableView.bounces = false
-        tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionsContactsCell)
-        tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsContactsHeader)
+        tableView.register(ContactsTableViewCell.self, forCellReuseIdentifier: idContactsCell)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+    }
+    
+    @objc func addButtonTapped() {
+        let contactsOption = ContactOptionTableViewController()
+        navigationController?.pushViewController(contactsOption, animated: true)
     }
     
     func pushControllers(vc: UIViewController) {
@@ -36,7 +41,7 @@ class ContactsTableViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return 4
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,36 +49,14 @@ class ContactsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsContactsCell, for: indexPath) as! OptionsTableViewCell
-        cell.cellContactsConfigure(nameArray: cellNameArray, indexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: idContactsCell, for: indexPath) as! ContactsTableViewCell
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        indexPath.section == 4 ? 200: 44
+        return 80
     }
-    
-    // создаём заголовки
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionsContactsHeader) as! HeaderOptionsTableViewCell
-//        header.textLabel.text = "HEADER" // выглядит убого, поэтому мы сами сделали Label
-        header.headerConfigure(nameArray: headerNameArray, section: section)
-        return header
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
-    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
-        switch indexPath.section {
-        case 0: alertForCellName(label: cell.nameCellLabel, name: "Name Contact", placeholder: "Enter name contact")
-        case 1: alertForCellName(label: cell.nameCellLabel, name: "Phone Contact", placeholder: "Enter phone contact")
-        case 2: alertForCellName(label: cell.nameCellLabel, name: "Mail Contact", placeholder: "Enter mail contact")
-        default:
-            print("Tap ContactTableView")
-        }
     }
 }
