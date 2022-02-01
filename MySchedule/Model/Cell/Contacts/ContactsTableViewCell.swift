@@ -11,7 +11,7 @@ class ContactsTableViewCell: UITableViewCell {
     
     let contactImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "contact")
+        imageView.image = UIImage(named: "contact")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true // для того, чтобы обрезать края
         imageView.translatesAutoresizingMaskIntoConstraints = false
